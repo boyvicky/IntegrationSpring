@@ -31,5 +31,8 @@
 			<result name="list">/jsp/customer/list.jsp</result>
 		</action>
 		
+		<!-- 数据字典Action 没有结果返回，只有一个默认的方法 execute-->
+		<action name="BaseDictAction" class="baseDictAction" method="execute">
+		</action>		
 	</package>
 </struts>
