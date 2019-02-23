@@ -27,8 +27,12 @@
 		</action>
 		
 		<action name="FrontCustomerAction_*" class="customerAction" method="{1}">
-			<result name="success">/success.jsp</result>
 			<result name="list">/jsp/customer/list.jsp</result>
+			<result name="toList" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">FrontCustomerAction_list</param>
+			</result>
+			
 		</action>
 		
 		<!-- 数据字典Action 没有结果返回，只有一个默认的方法 execute-->

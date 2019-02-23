@@ -15,6 +15,8 @@ import com.candy.utils.PageBean;
 
 public class CustomerServiceImpl implements CustomerService {
 
+	/*
+	
 	//未使用spring 容器
 	private CustomerDao cd = new CustomerDaoImpl();
 	
@@ -27,6 +29,8 @@ public class CustomerServiceImpl implements CustomerService {
 		tx.commit();
 	}
 
+	*/
+	
 	//使用spring 容器
 	
 	private CustomerDao customerDao;
@@ -44,8 +48,20 @@ public class CustomerServiceImpl implements CustomerService {
 		return pb;
 	}
 	
+	@Override
+	public void save(Customer customer) {
+		//1 维护Customer与数据字典对象的关系，由于struts参数封装，会将参数封装到数据字典的id属性
+		//那么我们无需手动维护关系
+		//2 调用dao保存客户
+		customerDao.save(customer);
+	}
+	
 	public void setCustomerDao(CustomerDao customerDao) {
 		this.customerDao = customerDao;
 	}
+
+
+
+
 
 }

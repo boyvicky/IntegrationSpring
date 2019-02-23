@@ -12,7 +12,7 @@ public class Customer {
 	private String cust_mobile;
 	
 	//引用关联的数据字典对象
-	private BaseDict cust_source;  //客户来源
+	private BaseDict cust_source;  //客户来源 cust_source.dict_id
 	private BaseDict cust_industry; //客户行业
 	private BaseDict cust_level;	//客户级别
 	
